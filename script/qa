@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -e -u
+./script/lint
+./script/test

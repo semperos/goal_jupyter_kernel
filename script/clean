@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e -u
+
+rm -rf .ruff_cache
+rm -rf .pytest_cache
+rm -rf .venv
+rm -rf __pycache__
+rm -rf data_kernelspec
+rm -rf dist
