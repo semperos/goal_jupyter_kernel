@@ -5,10 +5,6 @@ from pexpect.replwrap import REPLWrapper
 
 REPL = REPLWrapper("goal", "  ", None)
 
-REPL.run_command(
-    r"""ac:{gs:,/rt.get'!"! kw";ms:?["s"=@x;(..p.x%p.gs)#gs;[(..p.x@p.gs)#gs]]; ms@<_ms }"""
-)
-
 
 class GoalKernel(Kernel):
     implementation = "Goal"
@@ -39,7 +35,7 @@ class GoalKernel(Kernel):
         }
 
     def do_complete(self, code, cursor_pos):
-        goal_code = f"""""json ac["{code}*"]"""  # using say pollutes STDOUT handling
+        goal_code = f"""""json {{gs:,/rt.get'!"! kw";ms:?["s"=@x;(..p.x%p.gs)#gs;[(..p.x@p.gs)#gs]]; ms@<_ms }}["{code}*"]"""  # using say pollutes STDOUT handling
         status = "ok"
         completions = []
         try:
