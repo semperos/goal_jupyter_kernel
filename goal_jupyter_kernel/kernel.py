@@ -5,6 +5,7 @@ from pexpect.replwrap import REPLWrapper
 
 REPL = REPLWrapper("goal", "  ", None)
 
+goal_version = REPL.run_command('''rt.get"v"''').strip()
 
 class GoalKernel(Kernel):
     implementation = "Goal"
@@ -16,7 +17,7 @@ class GoalKernel(Kernel):
         "mimetype": "text/plain",
         "file_extension": ".goal",
     }
-    banner = "Goal array programming language kernel"
+    banner = f"Goal array programming language kernel (version {goal_version})"
 
     def do_execute(
         self, code, silent, store_history=True, user_expressions=None, allow_stdin=False
