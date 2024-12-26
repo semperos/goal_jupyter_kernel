@@ -2,7 +2,7 @@
 name = "goal_jupyter_kernel"
 dynamic = ["version"]
 description = "Jupyter kernel for the Goal array programming language"
-readme = "README.md"
+readme = "README.rst"
 license = { file = "LICENSE" }
 authors = [{ name = "Daniel Gregoire", email = "daniel.l.gregoire@gmail.com" }]
 classifiers = [
